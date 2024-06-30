@@ -42,36 +42,6 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-    // function countWords(text) {
-    //     let words = 0
-
-    //     let countableSpaces = 0
-    //     let spaceAtLast = false
-    //     for (let index = 0; index < text.length; index++) {
-    //         const element = text[index]
-    //         if (element === " " && spaceAtLast === false) {
-    //             countableSpaces++
-    //             spaceAtLast = true
-    //         }
-    //         else if (element === " " && spaceAtLast === true) {
-    //             spaceAtLast = true
-    //         }
-    //         else {
-    //             spaceAtLast = false
-    //         }
-    //     }
-    //     words = countableSpaces + 1
-
-    //     if (text[text.length - 1] === " ") {
-    //         words--
-    //     }
-    //     if (text.length === 0) {
-    //         words = 0
-    //     }
-
-    //     return words
-    // }
-
     const [text, setText] = useState("");
 
     return (
@@ -91,8 +61,8 @@ export default function TextForm(props) {
             <div className="container my-3" style={{ color: `${props.mode === "light" ? "black" : "white"}` }}>
                 <h1>Text summary</h1>
                 <p>{text.split(/\s+/).filter((element) => element.length !== 0).length} words and {text.length} characters</p>
-                <h2>Peview</h2>
-                <p>{text.length > 0 ? text : "No text to preiview!"}</p>
+                <h2>Preview</h2>
+                <p>{text.length > 0 ? text : "No text to preview!"}</p>
             </div>
         </>
     )
